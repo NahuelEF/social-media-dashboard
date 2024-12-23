@@ -1,4 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
+@layer base {
+  html {
+    scrollbar-color: theme(colors.charcoal) theme(colors.transparent);
+    scrollbar-width: thin;
+    background-color: theme(colors.white);
+  }
+
+  .dark {
+    scrollbar-color: theme(colors.white) theme(colors.transparent);
+    background-color: theme(colors.charcoal);
+  }
+}

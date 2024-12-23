@@ -12,6 +12,7 @@ const card = cva(
     "before:block",
     "before:h-1",
     "before:w-full",
+    "dark:bg-dark-blue",
   ],
   {
     variants: {

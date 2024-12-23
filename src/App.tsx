@@ -15,6 +15,7 @@ import {
   UpIcon,
   YoutubeIcon,
 } from "./assets/icons";
+import { useTheme } from "./components/theme-provider";
 import { SocialMedia, userStats } from "./data/userStats";
 import { cn } from "./lib/utils";
 
@@ -79,21 +80,33 @@ const ValueTrend = ({ value, text, format }: ValueTrendProps) => {
 
 function App() {
   const { social_media, overview_today } = userStats;
+  const { theme, setTheme } = useTheme();
+
+  const isDark = theme === "dark";
+
+  const toggleTheme = () => {
+    const newTheme = isDark ? "light" : "dark";
+    setTheme(newTheme);
+  };
 
   return (
-    <div className="container mx-auto h-screen bg-white px-4 text-subdued-blue">
-      <header className="flex items-center justify-between py-5">
-        <div>
-          <h1 className="pb-2 text-3xl font-semibold tracking-tight text-dark-blue first:mt-0">
+    <div className="container mx-auto h-full px-4 text-subdued-blue dark:text-muted-blue">
+      <header className="items-center justify-between py-5 sm:flex">
+        <div className="mb-4 border-b border-gray pb-8 dark:border-muted-blue sm:mb-0 sm:border-b-0 sm:pb-0">
+          <h1 className="pb-2 text-3xl font-semibold tracking-tight text-dark-blue first:mt-0 dark:text-white">
             Social Media Dashboard
           </h1>
           <p className="text-lg font-semibold">
             Total Followers: {sumFollowers(userStats.social_media)}
           </p>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-between sm:space-x-2">
           <Label htmlFor="dark-mode">Dark Mode</Label>
-          <Switch id="dark-mode" />
+          <Switch
+            id="dark-mode"
+            checked={isDark}
+            onCheckedChange={toggleTheme}
+          />
         </div>
       </header>
       <main className="space-y-9 py-6 leading-7">
@@ -113,7 +126,7 @@ function App() {
                 </CardHeader>
                 <CardContent>
                   <p className="uppercase tracking-[.25em]">
-                    <strong className="block text-6xl font-bold tracking-normal text-charcoal">
+                    <strong className="block text-6xl font-bold tracking-normal text-charcoal dark:text-white">
                       {formatNumberCompact(followers_count)}
                     </strong>
                     {platform == "youtube" ? "Subscribers" : "Followers"}
@@ -128,7 +141,7 @@ function App() {
         </section>
 
         <section>
-          <h2 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+          <h2 className="mb-8 scroll-m-20 text-2xl font-semibold tracking-tight dark:text-white">
             Overview - Today
           </h2>
           <div className="grid grid-cols-1 place-content-center gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -144,7 +157,7 @@ function App() {
                     </i>
                   </CardHeader>
                   <CardContent className="flex content-center justify-between">
-                    <strong className="text-4xl text-charcoal">
+                    <strong className="text-4xl text-charcoal dark:text-white">
                       {formatNumberCompact(interaction)}
                     </strong>
                     <ValueTrend value={percentage_change} format="percent" />
