@@ -13,28 +13,45 @@ module.exports = {
     colors: {
       transparent: "transparent",
       black: "hsl(0, 0, 0%)",
-      green: "hsl(163, 72%, 41%)", // Lime Green
-      red: "hsl(356, 69%, 56%)", // Bright Red
-      "facebook-blue": "hsl(208, 92%, 53%)", // Facebook Blue
-      "twitter-blue": "hsl(203, 89%, 53%)", // Twitter Blue
-      "instagram-yellow": "hsl(37, 97%, 70%)", // Instagram Gradient Start
-      "instagram-pink": "hsl(329, 70%, 58%)", // Instagram Gradient End
-      "youtube-red": "hsl(348, 97%, 39%)", // YouTube Red
+      white: "hsl(0, 0%, 100%)",
 
-      teal: "hsl(210, 78%, 56%)", // Toggle Gradient Start
-      emerald: "hsl(146, 68%, 55%)", // Toggle Gradient End
-      gray: "hsl(230, 22%, 74%)", // Toggle Light Theme
-
-      charcoal: "hsl(230, 17%, 14%)", // Very Dark Blue (BG and Text)
-      navy: "hsl(232, 19%, 15%)", // Very Dark Blue (Top BG Pattern)
-      "dark-blue": "hsl(228, 28%, 20%)", // Dark Desaturated Blue (Card BG)
-      "muted-blue": "hsl(228, 34%, 66%)", // Desaturated Blue (Text)
-
-      "pale-blue": "hsl(225, 100%, 98%)", // Very Pale Blue (Top BG Pattern)
-      "light-blue": "hsl(227, 47%, 96%)", // Light Grayish Blue (Card BG)
-      "subdued-blue": "hsl(228, 12%, 44%)", // Dark Grayish Blue (Text)
-      white: "hsl(0, 0%, 100%)", // (BG and Text)
+      red: {
+        500: "hsl(356, 69%, 56%)", // bright-red
+        700: "hsl(348, 97%, 39%)", // youtube-red
+      },
+      green: {
+        500: "hsl(163, 72%, 41%)", // lime-green
+        700: "hsl(146, 68%, 55%)", // toggle-gradient-end
+      },
+      teal: {
+        500: "hsl(210, 78%, 56%)", // toggle-gradient-start
+      },
+      blue: {
+        50: "hsl(232, 33%, 91%)", // hover-state (card-bg)
+        100: "hsl(227, 47%, 96%)", // light-grayish-blue (card-bg)
+        200: "hsl(225, 100%, 98%)", // very-pale-blue (top-bg-pattern)
+        300: "hsl(228, 12%, 44%)", // dark-grayish-blue (Text)
+        400: "hsl(228, 34%, 66%)", // desaturated-blue (text)
+        500: "hsl(208, 92%, 53%)", // facebook-blue
+        600: "hsl(203, 89%, 53%)", // twitter-blue
+        700: "hsl(228, 28%, 20%)", // dark-desaturated-blue (card-bg)
+        800: "hsl(232, 19%, 15%)", // very-dark-blue (top-bg-pattern)
+        900: "hsl(230, 17%, 14%)", // very-dark-blue (bg-text)
+      },
+      navy: {
+        600: "hsl(228, 26%, 27%)", // hover-state (card-bg)
+      },
+      yellow: {
+        500: "hsl(37, 97%, 70%)", // instagram-gradient-start
+      },
+      pink: {
+        500: "hsl(329, 70%, 58%)", // instagram-gradient-end
+      },
+      gray: {
+        500: "hsl(230, 22%, 74%)", // toggle-light-theme
+      },
     },
+
     container: {
       center: true,
       padding: "2rem",

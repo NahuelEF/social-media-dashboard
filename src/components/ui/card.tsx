@@ -6,25 +6,28 @@ import { cva, type VariantProps } from "class-variance-authority";
 const card = cva(
   [
     "rounded-lg",
-    "bg-light-blue",
+    "bg-blue-100",
+    "hover:bg-blue-50",
     "shadow-sm",
-    "before:content-['']",
     "before:block",
     "before:h-1",
     "before:w-full",
-    "dark:bg-dark-blue",
+    "dark:bg-blue-700",
+    "dark:hover:bg-navy-600",
+    "hover:transition-colors",
+    "hover:duration-300",
   ],
   {
     variants: {
       socialMedia: {
-        facebook: ["before:bg-facebook-blue"],
+        facebook: ["before:bg-blue-500"],
         instagram: [
           "before:bg-gradient-to-r",
-          "from-instagram-yellow",
-          "to-instagram-pink",
+          "from-yellow-500",
+          "to-pink-500",
         ],
-        twitter: ["before:bg-twitter-blue"],
-        youtube: ["before:bg-youtube-red"],
+        twitter: ["before:bg-blue-600"],
+        youtube: ["before:bg-red-700"],
         none: ["before:bg-transparent"],
       },
     },

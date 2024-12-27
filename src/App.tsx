@@ -69,7 +69,7 @@ const ValueTrend = ({ value, text, format }: ValueTrendProps) => {
     <p
       className={cn(
         "flex items-center justify-center text-sm font-bold",
-        isRise ? "text-green" : "text-red",
+        isRise ? "text-green-500" : "text-red-500",
       )}
     >
       <i className="mr-1">{isRise ? <UpIcon /> : <DownIcon />}</i>
@@ -90,10 +90,10 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto h-full px-4 text-subdued-blue dark:text-muted-blue">
-      <header className="items-center justify-between py-5 sm:flex">
-        <div className="mb-4 border-b border-gray pb-8 dark:border-muted-blue sm:mb-0 sm:border-b-0 sm:pb-0">
-          <h1 className="pb-2 text-3xl font-semibold tracking-tight text-dark-blue first:mt-0 dark:text-white">
+    <div className="text-blue-300 dark:text-blue-400 container mx-auto h-full px-4">
+      <header className="before:bg-blue-200 dark:before:bg-blue-800 items-center justify-between py-5 before:absolute before:inset-0 before:-z-10 before:h-64 before:rounded-b-xl sm:flex">
+        <div className="border-gray-500 dark:border-blue-400 mb-4 border-b pb-8 sm:mb-0 sm:border-b-0 sm:pb-0">
+          <h1 className="text-blue-700 pb-2 text-3xl font-semibold tracking-tight first:mt-0 dark:text-white">
             Social Media Dashboard
           </h1>
           <p className="text-lg font-semibold">
@@ -101,9 +101,12 @@ function App() {
           </p>
         </div>
         <div className="flex items-center justify-between sm:space-x-2">
-          <Label htmlFor="dark-mode">Dark Mode</Label>
+          <Label className="dark:hover:text-white" htmlFor="dark-mode">
+            Dark Mode
+          </Label>
           <Switch
             id="dark-mode"
+            className="data-[state=unchecked]:hover:from-teal-500 data-[state=unchecked]:hover:to-green-700 data-[state=unchecked]:hover:bg-gradient-to-r"
             checked={isDark}
             onCheckedChange={toggleTheme}
           />
@@ -126,7 +129,7 @@ function App() {
                 </CardHeader>
                 <CardContent>
                   <p className="uppercase tracking-[.25em]">
-                    <strong className="block text-6xl font-bold tracking-normal text-charcoal dark:text-white">
+                    <strong className="text-blue-900 block text-6xl font-bold tracking-normal dark:text-white">
                       {formatNumberCompact(followers_count)}
                     </strong>
                     {platform == "youtube" ? "Subscribers" : "Followers"}
@@ -157,7 +160,7 @@ function App() {
                     </i>
                   </CardHeader>
                   <CardContent className="flex content-center justify-between">
-                    <strong className="text-4xl text-charcoal dark:text-white">
+                    <strong className="text-blue-900 text-4xl dark:text-white">
                       {formatNumberCompact(interaction)}
                     </strong>
                     <ValueTrend value={percentage_change} format="percent" />

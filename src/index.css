@@ -4,13 +4,13 @@
 
 @layer base {
   html {
-    scrollbar-color: theme(colors.charcoal) theme(colors.transparent);
+    scrollbar-color: theme(colors.blue.900) theme(colors.transparent);
     scrollbar-width: thin;
     background-color: theme(colors.white);
   }
 
   .dark {
     scrollbar-color: theme(colors.white) theme(colors.transparent);
-    background-color: theme(colors.charcoal);
+    background-color: theme(colors.blue.900);
   }
 }
