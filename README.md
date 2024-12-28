@@ -1,10 +1,10 @@
 # 📊 Social Media Dashboard
 
-![Screenshot of social media dashboard](./design/desktop-preview.jpg)
-
 This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-### 📌 Links
+![Screenshot of social media dashboard](./design/desktop-preview.jpg)
+
+## 📌 Links
 
 - Solution URL: [GitHub](https://github.com/NahuelEF/todo-app)
 - Live Site URL: [Social Media Dashboard](https://nahuelef-todo-app.netlify.app/)
